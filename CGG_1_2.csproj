@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B25D53F-E1B6-4D26-8EDD-B01315B4A1E6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CGG_1_2</RootNamespace>
+    <AssemblyName>CGG_1_2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=5.1.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
+      <HintPath>packages\Autofac.5.1.2\lib\net461\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=5.10.3.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a">
+      <HintPath>packages\FluentAssertions.5.10.3\lib\net47\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+      <HintPath>packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\BrezenhamAction.cs" />
+    <Compile Include="Actions\BrezenhamSettingsAction.cs" />
+    <Compile Include="Actions\FlHorizonAction.cs" />
+    <Compile Include="Actions\FlHorizonSettingsAction.cs" />
+    <Compile Include="Actions\GraphDrawAction.cs" />
+    <Compile Include="Actions\GraphSettingsAction.cs" />
+    <Compile Include="Actions\PaletteSettingsAction.cs" />
+    <Compile Include="Actions\PolarGraphDrawAction.cs" />
+    <Compile Include="Actions\PolarGraphSettingsAction.cs" />
+    <Compile Include="Actions\PolyhedronAction.cs" />
+    <Compile Include="Actions\PolyhedronSettingsAction.cs" />
+    <Compile Include="Actions\RobertsAction.cs" />
+    <Compile Include="Actions\RobertsSettingsAction.cs" />
+    <Compile Include="Actions\SaveImageAction.cs" />
+    <Compile Include="app.Designer.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Brezenham\BrezenhamLogic.cs" />
+    <Compile Include="Brezenham\BrezenhamLogicFactory.cs" />
+    <Compile Include="Brezenham\BrezenhamSettings.cs" />
+    <Compile Include="CloudForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FileBlobStorage.cs" />
+    <Compile Include="Common\IBlobStorage.cs" />
+    <Compile Include="Common\IImageDirectoryProvider.cs" />
+    <Compile Include="Common\IImageHolder.cs" />
+    <Compile Include="Common\ImageSettings.cs" />
+    <Compile Include="Common\IObjectSerializer.cs" />
+    <Compile Include="Common\IPalette.cs" />
+    <Compile Include="Common\Palette.cs" />
+    <Compile Include="Common\PolarSettings.cs" />
+    <Compile Include="Common\SettingsForm.cs" />
+    <Compile Include="Common\XmlObjectSerializer.cs" />
+    <Compile Include="FlHorizon\FlHorizonFactory.cs" />
+    <Compile Include="FlHorizon\FlHorizonLogic.cs" />
+    <Compile Include="FlHorizon\FlHorizonSettings.cs" />
+    <Compile Include="GraphDrawingLogic\PolarGraphLogic.cs" />
+    <Compile Include="GraphDrawingLogic\PolarGraphLogicFactory.cs" />
+    <Compile Include="GraphicDrawer.cs" />
+    <Compile Include="IGraphicDrawer.cs" />
+    <Compile Include="PictureBoxImageHolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PixelGraph\GraphDrawingLogicFactory.cs" />
+    <Compile Include="PixelGraph\GraphSettings.cs" />
+    <Compile Include="PixelGraph\PixelGraphLogic.cs" />
+    <Compile Include="Polyhedron_Diff\InputParser.cs" />
+    <Compile Include="Polyhedron_Diff\PolyhedronFactory.cs" />
+    <Compile Include="Polyhedron_Diff\PolyhedronLogic.cs" />
+    <Compile Include="Polyhedron_Diff\PolyhedronSettings.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roberts\Face.cs" />
+    <Compile Include="Roberts\RobertsCommon.cs" />
+    <Compile Include="Roberts\RobertsFactory.cs" />
+    <Compile Include="Roberts\RobertsLogic.cs" />
+    <Compile Include="Roberts\RobertsSettings.cs" />
+    <Compile Include="Roberts\RobertsTests.cs" />
+    <Compile Include="Roberts\VertexesParser.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="UiActions\IUiAction.cs" />
+    <Compile Include="UiActions\UiActionExtensions.cs" />
+    <EmbeddedResource Include="CloudForm.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit.3.12.0\build\NUnit.props'))" />
+  </Target>
+</Project>
